@@ -49,6 +49,7 @@ namespace NeuralNetworkHelper.NeuralNetworkHelper.Domain
 
         public double CalculateActivity(T input, bool updateMyActivity = true)
         {
+            CurrentInput = input;
             var activity = ActivtyFunction.Invoke(this);
 
             if (updateMyActivity)
@@ -59,6 +60,7 @@ namespace NeuralNetworkHelper.NeuralNetworkHelper.Domain
 
         public double CalculateActivation(T input, bool updateMyActivation = true)
         {
+            CurrentInput = input;
             var activation = ActivationFunction.Invoke(this);
 
             if (updateMyActivation)
